@@ -131,7 +131,7 @@ OS_FLAGS  OSFlagAccept (OS_FLAG_GRP  *pgrp,
     }
     result = (INT8U)(wait_type & OS_FLAG_CONSUME);
     if (result != (INT8U)0) {                              /* See if we need to consume the flags      */
-        wait_type &= ~OS_FLAG_CONSUME;
+        wait_type &= (INT8U)~OS_FLAG_CONSUME;
         consume    = OS_TRUE;
     } else {
         consume    = OS_FALSE;

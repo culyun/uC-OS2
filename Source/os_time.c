@@ -201,7 +201,7 @@ INT8U  OSTimeDlyResume (INT8U prio)
 
     ptcb->OSTCBDly = 0u;                                       /* Clear the time delay                 */
     if ((ptcb->OSTCBStat & OS_STAT_PEND_ANY) != OS_STAT_RDY) {
-        ptcb->OSTCBStat     &= ~OS_STAT_PEND_ANY;              /* Yes, Clear status flag               */
+        ptcb->OSTCBStat     &= (INT8U)(~OS_STAT_PEND_ANY);              /* Yes, Clear status flag               */
         ptcb->OSTCBStatPend  =  OS_STAT_PEND_TO;               /* Indicate PEND timeout                */
     } else {
         ptcb->OSTCBStatPend  =  OS_STAT_PEND_OK;
